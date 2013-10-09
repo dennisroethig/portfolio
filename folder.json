@@ -1,0 +1,17 @@
+{
+    "version": "1.0",
+    
+    "source":               "source",
+    "resources_source":     "source/resources",
+    "css_source":           "source/resources/css",
+    "js_source":            "source/resources/js",
+    "templates_source":     "source/templates",
+    "partials_source":      "source/templates/partials",
+    "layouts_source":       "source/templates/partials/layouts",
+
+    "dist":                 "dist",
+    "resources_dist":       "dist/resources",
+    "css_dist":             "dist/resources/css",
+    "js_dist":              "dist/resources/js"
+    
+}
