@@ -1,8 +1,33 @@
-<nav>
-    <ul>
-        <li><a href="#">link 1</a></li>
-        <li><a href="#">link 2</a></li>
-        <li><a href="#">link 3</a></li>
-        <li><a href="#">link 4</a></li>
-    </ul>
-</nav>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#main-nav"></button>
+      
+      <a href="/" class="navbar-brand">Dennis Roethig</a>
+
+      <div class="nav-collapse collapse in" id="main-nav">
+        <ul class="nav pull-right">
+            <li class="{{resume_page_class}}">
+              <a href="resume.html">
+                <span class="fui-user"></span>
+                <span class="">Resume</span>
+              </a>
+            </li>
+            <li class="{{like_page_class}}">
+              <a href="things-i-like.html">
+                <span class="fui-heart"></span>
+                <span class="">Things I like</span>
+              </a>
+            </li>
+            <li class="{{projects_page_class}}">
+              <a href="projects.html">
+                <span class="fui-image"></span>
+                <span class="">Projects</span>
+              </a>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

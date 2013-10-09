@@ -14,8 +14,10 @@ module.exports = function (grunt) {
         assemble: {
             options: {
                 flatten: true,
+                data: 'source/data/footer.json',
                 layout: '<%= folder.layouts_source %>/master.hbs',
-                partials: "<%= folder.partials_source %>/**/*.hbs"
+                partials: "<%= folder.partials_source %>/**/*.hbs",
+                collections: ['internal_links']
             },
             pages: {
                 src: ['<%= folder.templates_source %>/*.hbs'],
@@ -41,6 +43,7 @@ module.exports = function (grunt) {
             debug: {
                 src: [
                     '<%= folder.js_source %>/libs/jquery.js',
+                    '<%= folder.js_source %>/libs/bootstrap.min.js',
                     '<%= folder.js_source %>/common.js'
                 ],
                 dest: '<%= folder.js_dist %>/main.js',
@@ -73,7 +76,7 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: '<%= folder.resources_source %>/',
-                src: ['htc/*', 'imgs/**'],
+                src: ['htc/*', 'imgs/**', 'fonts/**', 'css/*.css'],
                 dest: '<%= folder.resources_dist %>'
             }
         },
