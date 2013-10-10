@@ -81,6 +81,25 @@ module.exports = function (grunt) {
             }
         },
 
+        less: {
+            development: {
+                options: {
+                    paths: ['<%= folder.css_source %>/less']
+                },
+                files: {
+                    '<%= folder.css_dist %>/flat-ui.css': '<%= folder.css_source %>/less/flat-ui.less'
+                }
+            },
+            production: {
+                options: {
+                    paths: ['<%= folder.css_source %>/less'],
+                    yuicompress: true
+                },
+                files: {
+                    '<%= folder.css_dist %>/flat-ui.min.css': '<%= folder.css_source %>/less/flat-ui.less'
+                }
+            }
+        },
 
         jshint: {
             files: ['<%= folder.js_source %>/**/*.js'],
@@ -131,6 +150,10 @@ module.exports = function (grunt) {
             sass: {
                 files: ['<%= folder.css_source %>/**/*.scss'],
                 tasks: ['compass']
+            },
+            less: {
+                files: ['<%= folder.css_source %>/**/*.less'],
+                tasks: ['less']
             }
         }
 
@@ -148,6 +171,7 @@ module.exports = function (grunt) {
         'grunt-contrib-copy',
         'grunt-contrib-jshint',
         'grunt-contrib-sass',
+        'grunt-contrib-less',
         'grunt-contrib-watch',
         'grunt-prettify'
     ], function (tasks) {
@@ -172,6 +196,7 @@ module.exports = function (grunt) {
         'clean:dist',
         'assemble',
         'concat',
+        'less',
         'compass',
         'copy',
         'prettify'

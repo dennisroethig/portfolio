@@ -7,7 +7,48 @@
 @import "partials/normalize";
 
 
-.nav-list.affix {
-	top: 10px;
+// .nav-list.affix {
+// 	top: 24px;
+// }
+
+.skills {
+	
+	font-size: 2.15em;
+	padding-bottom: 40px;
+
+	h6 {
+		margin-top: 1em;
+	}
 }
 
+.work_experience {
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+.like {
+
+	padding-top: 60px;
+	padding-bottom: 60px;
+
+	// h3 {
+
+	// }
+
+	img {
+		width: 100%;
+		// float: left;
+		padding-right: 10%;
+		// margin-bottom: 80px;
+	}
+
+	// p {
+	// 	margin-top: 10px;
+	// }
+
+	hr {
+		margin-top: 60px;
+		margin-bottom: 60px;
+	}
+
+}

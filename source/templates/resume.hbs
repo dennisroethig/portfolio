@@ -1,5 +1,6 @@
 ---
 title: Resume Page
+blog_page_class: inactive
 resume_page_class: active
 like_page_class: inactive
 projects_page_class: inactive
@@ -15,14 +16,21 @@ internal_links:
 
 		<div class="col-md-3">
 
-			{{> side_nav}}
+			<ul class="nav nav-list">
+			  <li><a href="#professional_profile">Professional Profile</a></li>
+			  <li><a href="#work_experience">Work Experience</a></li>
+			</ul>
 
 		</div>
 		
 		<div class="col-md-9">
+			
+			{{> skills}}
+			
+			<hr>
 
-			<h3>{{title}}</h3>
-
+			{{> work_experience}}
+			
 		</div>
 
 	</div>
