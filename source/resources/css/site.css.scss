@@ -13,17 +13,55 @@
 
 .skills {
 	
-	font-size: 2.15em;
+	font-size: 1.6em;
+	padding-top: 20px;
 	padding-bottom: 40px;
 
 	h6 {
 		margin-top: 1em;
+		font-size: 1em;
 	}
 }
 
 .work_experience {
 	padding-top: 20px;
 	padding-bottom: 40px;
+
+	.alert {
+	
+		position: relative;
+		overflow: hidden;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 24px;
+			height: 24px;
+			background-color: #ccc;
+			z-index: 1;
+			border-radius: 24px;
+			border: 1px solid #666;
+		}
+
+		&.au:after {
+			background:transparent url('../imgs/flags/square/au.svg') center center no-repeat;
+			background-size: 24px 24px;
+		}
+
+		&.de:after {
+			background:transparent url('../imgs/flags/square/de.svg') center center no-repeat;
+			background-size: 24px 24px;
+		}
+
+		&.za:after {
+			background:transparent url('../imgs/flags/square/za.svg') center center no-repeat;
+			background-size: 24px 24px;
+		}
+
+
+	}
 }
 
 .like {
@@ -49,6 +87,32 @@
 	hr {
 		margin-top: 60px;
 		margin-bottom: 60px;
+	}
+
+}
+
+.current_projects {
+	
+	padding-top: 20px;
+	padding-bottom: 40px;
+
+	article {
+		height: 600px;
+		width: 90%;
+		background: transparent url('../imgs/icons/svg/imac.svg') center top no-repeat;
+		background-size: 100% auto;
+
+		&.desktop {
+			background-image: url('../imgs/icons/svg/imac.svg');
+		}
+
+		&.tablet {
+			background-image: url('../imgs/icons/svg/ipad-mod.svg');
+		}
+
+		&.mobile {
+			background-image: url('../imgs/icons/svg/iphone-mod.svg');
+		}
 	}
 
 }

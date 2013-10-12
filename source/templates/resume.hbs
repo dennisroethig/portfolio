@@ -4,9 +4,6 @@ blog_page_class: inactive
 resume_page_class: active
 like_page_class: inactive
 projects_page_class: inactive
-internal_links:
-- Skills
-- Work Experience
 ---
 
 {{> header}}
@@ -14,20 +11,13 @@ internal_links:
 <div class="container">
 	<div class="row">
 
-		<div class="col-md-3">
+		<div class="col-md-4">
 
-			<ul class="nav nav-list">
-			  <li><a href="#professional_profile">Professional Profile</a></li>
-			  <li><a href="#work_experience">Work Experience</a></li>
-			</ul>
+			{{> skills}}
 
 		</div>
 		
-		<div class="col-md-9">
-			
-			{{> skills}}
-			
-			<hr>
+		<div class="col-md-8">
 
 			{{> work_experience}}
 			

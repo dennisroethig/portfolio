@@ -135,6 +135,9 @@ module.exports = function (grunt) {
 
 
         watch: {
+            options: {
+                livereload: true
+            },
             handlebars: {
                 files: ['<%= folder.templates_source %>/**/*.hbs'],
                 tasks: ['assemble', 'prettify']
