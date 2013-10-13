@@ -1,0 +1,39 @@
+{{#each projects}}
+
+	<div class="row">
+
+		<div class="col-md-10 col-md-offset-1" id="friendticker">
+			
+			<article id="friendticker-details" class="desktop">
+
+				<div>
+
+					<img src="resources/imgs/icons/svg/imac.svg" alt="" class="project-type">
+					
+					<section>
+
+						<p class="project-title">
+							{{this.title}}
+							<a href="#friendticker-details" class="btn btn-xs btn-primary btn-inverse mlm fui-plus-inverted"></a>
+							<a href="#friendticker" class="btn btn-xs btn-primary btn-inverse mlm fui-cross-inverted"></a>
+						</p>
+						
+						<div class="project-details">
+
+							<h5>{{this.subTitle}}</h5>
+							<h6><a href="{{this.url}}" target="_blank">{{this.url}}</a></h6>
+							{{#each this.paragraphs}}
+								<p>{{this}}</p>
+							{{/each}}			
+						</div>				
+					
+					</section>
+
+				</div>
+
+			</article>
+
+		</div>
+	</div>
+
+{{/each}}

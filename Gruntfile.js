@@ -14,14 +14,25 @@ module.exports = function (grunt) {
         assemble: {
             options: {
                 flatten: true,
-                data: 'source/data/footer.json',
+                data: 'source/data/*.json',
                 layout: '<%= folder.layouts_source %>/master.hbs',
                 partials: "<%= folder.partials_source %>/**/*.hbs",
-                collections: ['internal_links']
+                collections: []
             },
             pages: {
                 src: ['<%= folder.templates_source %>/*.hbs'],
                 dest: '<%= folder.dist %>/'
+            }
+        },
+
+
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 version', 'ie 8', 'ie 7']
+            },
+            site: {
+                src: '<%= folder.css_dist %>/site.css',
+                dest: '<%= folder.css_dist %>/site.css'
             }
         },
 
@@ -138,6 +149,10 @@ module.exports = function (grunt) {
             options: {
                 livereload: true
             },
+            data: {
+                files: ['source/data/**/*.json'],
+                tasks: ['assemble', 'prettify']
+            },
             handlebars: {
                 files: ['<%= folder.templates_source %>/**/*.hbs'],
                 tasks: ['assemble', 'prettify']
@@ -167,6 +182,7 @@ module.exports = function (grunt) {
     // load npm tasks
     grunt.util._.each([
         'assemble',
+        'grunt-autoprefixer',
         'grunt-contrib-clean',
         'grunt-contrib-connect',
         'grunt-contrib-compass',
@@ -202,6 +218,7 @@ module.exports = function (grunt) {
         'less',
         'compass',
         'copy',
+        'autoprefixer',
         'prettify'
     ]);
 
