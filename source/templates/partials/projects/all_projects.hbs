@@ -1,0 +1,38 @@
+{{#each projects}}
+
+	<div class="row">
+
+		<div class="col-md-10 col-md-offset-1" id="{{this.identifier}}">
+			
+			<article id="{{this.identifier}}-details" class="desktop {{this.identifier}}">
+
+				<div>
+
+					<img src="resources/imgs/icons/svg/imac.svg" alt="" class="project-type">
+					
+					<section>
+
+						<a href="#{{this.identifier}}-details" class="details-btn fui-plus"></a>
+						<a href="#{{this.identifier}}" class="details-btn fui-cross"></a>
+						
+						<div class="project-details">
+							<h5>{{this.title}}</h5>
+							<p>
+								{{this.subTitle}}<br>
+								<a href="{{this.url}}" target="_blank">{{this.url}}</a>
+							</p>
+							{{#each this.paragraphs}}
+								<p>{{this}}</p>
+							{{/each}}			
+						</div>				
+					
+					</section>
+
+				</div>
+
+			</article>
+
+		</div>
+	</div>
+
+{{/each}}

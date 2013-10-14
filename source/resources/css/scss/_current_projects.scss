@@ -19,23 +19,34 @@
 				bottom: 40%;
 				left: 5%;
 				right: 5%;
-				background: transparent url('../imgs/projects/friendticker.png') center top no-repeat;
-				background-size: 100% auto;
+				// background: transparent url('../imgs/projects/friendticker.png') center top no-repeat;
+				// background-size: 100% auto;
 			}
 
 		}
 
-		.btn {
-			position: absolute;
-			top: 0;
-			right:0;
+		&.friendticker > div:before {
+			background: transparent url('../imgs/projects/friendticker.png') center top no-repeat;
+			background-size: 100% auto;
 		}
 
-		.fui-plus-inverted {
+		&.glassysurf > div:before {
+			background: transparent url('../imgs/projects/glassysurf.png') center top no-repeat;
+			background-size: 100% auto;
+		}
+
+		.details-btn {
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: 1.8em;
+		}
+
+		.fui-plus {
 			display: block;
 		}
 
-		.fui-cross-inverted {
+		.fui-cross {
 			display: none;
 		}
 		
@@ -60,18 +71,6 @@
 			transition-duration: 0.5s;
 			transition-timing-function: ease-in;
 
-
-			.project-title {
-				position: absolute;
-				top: -7.5%;
-				left: 0;
-				width: 100%;
-				// background-color: #f00;
-				color: #fff;
-
-				
-			}
-
 			.project-details {
 				opacity: 0;
 				transition-property: opacity;
@@ -79,7 +78,7 @@
 				transition-timing-function: ease-out;
 				overflow: hidden;
 
-				h5, h6, p {
+				h4, h5, h6, p {
 					position: relative;
 					left: -100%;
 					transition-property: left;
@@ -93,11 +92,11 @@
 	
 		&:target {
 			
-			.fui-plus-inverted {
+			.fui-plus {
 				display: none;
 			}
 
-			.fui-cross-inverted {
+			.fui-cross {
 				display: block;
 			}
 
@@ -108,7 +107,7 @@
 				.project-details {
 					opacity: 1;
 
-					h5, h6, p {
+					h4, h5, h6, p {
 						left: 0;
 					}
 
