@@ -3,9 +3,10 @@
 // --------------------------------------------------
 
 .breadcrumb {
-  background-color: mix(@base, white, 6%);
-  font-size: ceil(@font-size-base * 1.071);
+  background-color: mix(@brand-primary, white, 6%);
+  font-size: @component-font-size-base;
   font-weight: 700;
+  line-height: 1;
   padding: 13px 20px;
   border-radius: 6px;
 
@@ -14,18 +15,18 @@
     text-shadow: none;
 
     &:after {
-      color: @lightgray;
+      color: @gray-light;
       content: "\e002";
       display: inline-block;
       font-family: 'Flat-UI-Icons';
-      font-size: @font-size-base * .7;
+      font-size: @component-font-size-base * .65;
       margin: -4px 9px 0 13px;
       vertical-align: middle;
       -webkit-font-smoothing: antialiased;
     }
   }
   .active {
-    color: @lightgray;
+    color: @gray-light;
     cursor: default;
 
     &:after {
@@ -44,13 +45,13 @@
 
 // Plain text breadcrumb
 .breadcrumb-text {
-  color: @lightgray;
+  color: @gray-light;
   margin-bottom: 20px;
 
   .caption {
     font-weight: 700;
     margin: 0 0 3px;
-    font-size: ceil(@font-size-base * 1.286);
+    font-size: ceil(@component-font-size-base * 1.2); // ~18px
 
     &:after {
       content: "\e02c";
@@ -65,13 +66,13 @@
   }
 
   p {
-    font-size: ceil(@font-size-base * 1.714); // ~24px
+    font-size: ceil(@component-font-size-base * 1.6); // ~24px
     font-weight: 700;
     margin-bottom: 20px;
 
     a {
       &:after {
-        color: @lightgray;
+        color: @gray-light;
         content: "/";
         font-weight: normal;
         margin: 0 4px 0 9px;

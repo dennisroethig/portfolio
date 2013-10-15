@@ -66,6 +66,7 @@ module.exports = function (grunt) {
         connect: {
             server: {
                 options: {
+                    hostname: '*',
                     port: 9000,
                     base: ['<%= folder.dist %>', '<%= folder.resources_dist %>']
                 }
@@ -218,8 +219,8 @@ module.exports = function (grunt) {
         'less',
         'compass',
         'copy',
-        'autoprefixer',
-        'prettify'
+        'prettify',
+        'autoprefixer'
     ]);
 
 

@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 .table {
-  font-size: ceil(@font-size-base * 1.142);
+  font-size: floor(@component-font-size-base * 1.067); // 16px
   
   // Cells
   > thead,
@@ -12,17 +12,17 @@
     > tr {
       > th,
       > td {
-        padding: 10px 25px;
-        line-height: @line-height-base;
+        padding: 9px 25px;
+        line-height: 1.231; // ~19.7px
         border-top: 2px solid @table-border-color;
       }
       > th {
-		    color: mix(@base, white, 85%);
+		    color: mix(@brand-primary, white, 85%);
 		    border-bottom: 2px solid @table-border-color;
 		  }
     }
   }
-  i[class*="fui-"] {
+  [class*="fui-"] {
     vertical-align: baseline;
     font-size: 20px;
     margin: -5px 0;
@@ -39,7 +39,7 @@
   }
   .selected-row {
     > td {
-      background-color: mix(@firm, white, 5.5%);
+      background-color: mix(@brand-secondary, white, 5.5%);
     }
   }
   img { vertical-align: top; }
@@ -48,7 +48,7 @@
 // Bordered table
 .table-bordered {
   border: 2px solid @table-border-color;
-  font-size: @font-size-base;
+  font-size: ceil(@component-font-size-base * 0.933); // ~14px
 	
 	> thead,
   > tbody,
@@ -57,6 +57,9 @@
       th,
 		  td {
 		    border: 2px solid @table-border-color !important;
+		    padding-top: 8px;
+		    padding-bottom: 8px;
+		    vertical-align: middle;
 		  }
     }
   }  
@@ -100,24 +103,24 @@
   &.success > td,
   & > td.success {
     background-color: @table-success;
-    border-color: mix(@success, white, 20%);
+    border-color: mix(@brand-success, white, 20%);
   }
   &.error > td,
   & > td.error,
   &.danger > td,
   & > td.danger {
     background-color: @table-danger;
-    border-color: mix(@danger, white, 20%);
+    border-color: mix(@brand-danger, white, 20%);
   }
   &.warning > td,
   & > td.warning {
     background-color: @table-warning;
-    border-color: mix(@warning, white, 33%);
+    border-color: mix(@brand-warning, white, 33%);
   }
   &.info > td,
   & > td.info {
     background-color: @table-info;
-    border-color: mix(@info, white, 20%);
+    border-color: mix(@brand-info, white, 20%);
   }
 }
 

@@ -15,7 +15,7 @@
 
 // Spinner Wrapper
 .ui-spinner {
-  .inline-block();
+  display: inline-block;
   overflow: hidden;
   padding: 0 37px 0 0;
   position: relative;
@@ -40,18 +40,18 @@
   // Focus State
   &.focus {
     input {
-      color: @firm;
-      border-color: @firm;
+      color: @brand-secondary;
+      border-color: @brand-secondary;
     }
     .ui-spinner-button {
-      background-color: @firm;
+      background-color: @brand-secondary;
 
       &:hover {
-        background-color: mix(@firm, black, 85%)
+        background-color: mix(@brand-secondary, black, 85%)
       }
     }
     .ui-spinner-up {
-      border-bottom-color: mix(@firm, black, 85%);
+      border-bottom-color: mix(@brand-secondary, black, 85%);
     }
   }
 }
@@ -62,7 +62,7 @@
   display: block;
   font-size: .5em;
   line-height: 19px;
-  height: 21px;
+  height: 22px;
   margin: 0;
   overflow: hidden;
   padding: 0;
@@ -73,12 +73,12 @@
   cursor: pointer;
   color: #fff;
   text-decoration: none;
-  background-color: @lightgray;
+  background-color: @gray-light;
   outline: none;
 
   &:hover {
-    background-color: mix(@lightgray, white, 70%);
-    color: mix(@firm, white, 10%);
+    background-color: mix(@gray-light, white, 70%);
+    color: mix(@brand-secondary, white, 10%);
   }
 
   // Icon
@@ -94,7 +94,7 @@
   }
 }
 .ui-spinner-up {
-  border-bottom: 2px solid mix(@lightgray, white, 70%);
+  border-bottom: 2px solid mix(@gray-light, white, 70%);
   top: 0;
   border-radius: 0 @border-radius-large 0 0;
 }

@@ -3,9 +3,9 @@
 // --------------------------------------------------
 
 .dialog {
-  background-color: mix(@base, white, 9%);
-  border-top: 2px solid mix(@base, white, 20);
-  font-size: @dialog-font-size; // ~16px
+  background-color: mix(@brand-primary, white, 9%);
+  border-top: 2px solid mix(@brand-primary, white, 20);
+  font-size: @dialog-font-size;
   margin-bottom: 20px;
   padding: @dialog-padding;
   position: relative;
@@ -36,12 +36,12 @@
     border-top-color: #e2edeb;
   }
 
-  &.dialog-danger  { .swap-dialog-color(@danger); }
-  &.dialog-warning { .swap-dialog-color(@warning); }
-  &.dialog-info    { .swap-dialog-color(@info); }
+  &.dialog-danger  { .swap-dialog-color(@brand-danger); }
+  &.dialog-warning { .swap-dialog-color(@brand-warning); }
+  &.dialog-info    { .swap-dialog-color(@brand-info); }
   &.dialog-inverse {
-    background-color: @base;
-    border-top-color: mix(@base, black, 80%);
+    background-color: @brand-primary;
+    border-top-color: mix(@brand-primary, black, 80%);
     color: @inverse;
   }
 }

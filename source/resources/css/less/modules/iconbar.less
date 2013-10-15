@@ -23,7 +23,7 @@
 
       &.active {
         > a {
-          color: @firm;
+          color: @brand-secondary;
         }
       }
 
@@ -36,7 +36,7 @@
       > a {
         color: @inverse;
         display: block;
-        font-size: ceil(@font-size-base * 1.714);
+        font-size: ceil(@component-font-size-base * 1.600); // ~24px
         line-height: 1;
         padding: 8px 30px 32px;
         position: relative;
@@ -44,7 +44,7 @@
         
         &:hover,
         &:focus {
-          color: @firm;
+          color: @brand-secondary;
         }
       }
     }
@@ -105,14 +105,14 @@
 
 // Unread icon
 .iconbar-unread {
-  background-color: mix(@info, black, 80%);
+  background-color: mix(@brand-info, black, 80%);
   border-radius: 50%;
   color: @inverse;
   font-family: @font-family-base;
-  font-size: ceil(@font-size-base * .857);
+  font-size: ceil(@component-font-size-base * .80); // ~12px
   font-weight: 700;
-  line-height: ceil(@font-size-base * 1.357);
-  min-width: 18px;
+  line-height: 1.667; // ~25px
+  min-width: 20px;
   padding: 0 2px;
   position: absolute;
   right: 20px;
@@ -123,10 +123,10 @@
 
 // Alternate Colors
 // --------------------------------------------------
-.iconbar-success { .swap-iconbar-color(@success); }
-.iconbar-danger  { .swap-iconbar-color(@danger); }
-.iconbar-warning { .swap-iconbar-color(@warning); }
-.iconbar-info    { .swap-iconbar-color(@info); }
+.iconbar-success { .swap-iconbar-color(@brand-success); }
+.iconbar-danger  { .swap-iconbar-color(@brand-danger); }
+.iconbar-warning { .swap-iconbar-color(@brand-warning); }
+.iconbar-info    { .swap-iconbar-color(@brand-info); }
 
 // Horizontal layout
 // --------------------------------------------------

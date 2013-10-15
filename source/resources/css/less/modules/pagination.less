@@ -37,7 +37,7 @@
       // Pseudos and states
       &.active {
         > a, > span {
-          background-color: @firm;
+          background-color: @brand-secondary;
           color: @inverse;
         }
         &.previous,
@@ -48,7 +48,7 @@
             &,
             &:hover,
             &:focus {
-              background-color: @firm;
+              background-color: @brand-secondary;
               color: @inverse;
             }
           }
@@ -84,7 +84,7 @@
         > a,
         > span {
           border-right: 2px solid mix(@pagination-color, white, 66%);
-          font-size: ceil(@font-size-base * 1.142); // ~16px
+          font-size: floor(@component-font-size-base * 1.067); // ~16px
           min-width: auto;
           padding: 12px 17px;
         }
@@ -121,20 +121,21 @@
         border: none;
         border-left: 2px solid mix(@pagination-color, white, 66%);
         color: @inverse;
+        font-size: ceil(@component-font-size-base * 0.933); // ~14px
         line-height: 16px;
         min-height: 41px;
         min-width: 41px;
         outline: none;
         padding: 12px 10px;
         text-align: center;
-        .transition(.2s ease-out);
+        .transition(.25s ease-out);
 
         &:hover,
         &:focus {
-          background-color: @firm;
+          background-color: @brand-secondary;
         }
         &:active {
-          background-color: @firm;
+          background-color: @brand-secondary;
           color: @inverse;
         }
       }
@@ -146,7 +147,8 @@
     &.previous,
     &.next {
       margin-right: 8px;
-      font-size: @font-size-base;
+      font-size: ceil(@component-font-size-base * 0.933); // ~14px
+      line-height: 1.429; // ~20px
       padding-left: 23px;
       padding-right: 23px;
       
@@ -181,12 +183,12 @@
           border-bottom: 2px solid mix(@pagination-color, white, 80%);
           border-radius: @border-radius-large 0 0;
           
-          &.btn-primary { border-bottom-color: mix(@firm, white, 80%); }
-          &.btn-danger  { border-bottom-color: mix(@danger, white, 80%); }
-          &.btn-warning { border-bottom-color: mix(@warning, white, 80%); }
-          &.btn-success { border-bottom-color: mix(@success, white, 80%); }
-          &.btn-info    { border-bottom-color: mix(@info, white, 80%); }
-          &.btn-inverse { border-bottom-color: mix(@base, white, 80%); }
+          &.btn-primary { border-bottom-color: mix(@brand-secondary, white, 80%); }
+          &.btn-danger  { border-bottom-color: mix(@brand-danger, white, 80%); }
+          &.btn-warning { border-bottom-color: mix(@brand-warning, white, 80%); }
+          &.btn-success { border-bottom-color: mix(@brand-success, white, 80%); }
+          &.btn-info    { border-bottom-color: mix(@brand-info, white, 80%); }
+          &.btn-inverse { border-bottom-color: mix(@brand-primary, white, 80%); }
           > [class*="fui"] { margin-left: -20px; }
         }
         & + ul {
@@ -201,12 +203,12 @@
           top: 0;
           border-radius: 0 @border-radius-large 0 0;
           
-          &.btn-primary { border-bottom-color: mix(@firm, white, 80%); }
-          &.btn-danger  { border-bottom-color: mix(@danger, white, 80%); }
-          &.btn-warning { border-bottom-color: mix(@warning, white, 80%); }
-          &.btn-success { border-bottom-color: mix(@success, white, 80%); }
-          &.btn-info    { border-bottom-color: mix(@info, white, 80%); }
-          &.btn-inverse { border-bottom-color: mix(@base, white, 80%); }
+          &.btn-primary { border-bottom-color: mix(@brand-secondary, white, 80%); }
+          &.btn-danger  { border-bottom-color: mix(@brand-danger, white, 80%); }
+          &.btn-warning { border-bottom-color: mix(@brand-warning, white, 80%); }
+          &.btn-success { border-bottom-color: mix(@brand-success, white, 80%); }
+          &.btn-info    { border-bottom-color: mix(@brand-info, white, 80%); }
+          &.btn-inverse { border-bottom-color: mix(@brand-primary, white, 80%); }
           > [class*="fui"] { margin-right: -20px; }
         }
       }
@@ -226,11 +228,11 @@
 
 // Alternate Colors
 // --------------------------------------------------
-.pagination-danger  { .swap-pagination-color(@danger, @button-danger-hover, @button-danger-active); }
-.pagination-success { .swap-pagination-color(@success, @button-success-hover, @button-success-active); }
-.pagination-warning { .swap-pagination-color(@warning, @button-warning-hover, @button-warning-active); }
-.pagination-info    { .swap-pagination-color(@info, @button-info-hover, @button-info-active); }
-.pagination-inverse { .swap-pagination-color(@base, @button-inverse-hover, @button-inverse-active); }
+.pagination-danger  { .swap-pagination-color(@brand-danger, @btn-danger-hover-bg, @btn-danger-active-bg); }
+.pagination-success { .swap-pagination-color(@brand-success, @btn-success-hover-bg, @btn-success-active-bg); }
+.pagination-warning { .swap-pagination-color(@brand-warning, @btn-warning-hover-bg, @btn-warning-active-bg); }
+.pagination-info    { .swap-pagination-color(@brand-info, @btn-info-hover-bg, @btn-info-active-bg); }
+.pagination-inverse { .swap-pagination-color(@brand-primary, @btn-inverse-hover-bg, @btn-inverse-active-bg); }
 
 // Ultra minimal pagination
 // --------------------------------------------------
@@ -257,7 +259,6 @@
           background: transparent;
           border: none;
           border-right: 2px solid mix(@pagination-color, white, 66%);
-          font-size: ceil(@font-size-base * 1.142); // ~16px
           margin: 0 9px 0 0;
           padding: 12px 17px;
           border-radius: @border-radius-large 0 0 @border-radius-large;
@@ -327,14 +328,14 @@
 
         &:hover,
         &:focus {
-          background-color: @firm;
-          border-color: @firm;
+          background-color: @brand-secondary;
+          border-color: @brand-secondary;
           color: @inverse;
           .transition(~"background .2s ease-out, border-color .2s ease-out, color .2s ease-out");
         }
         &:active {
-          background-color: mix(@firm, black, 85%);
-          border-color: mix(@firm, black, 85%);
+          background-color: mix(@brand-secondary, black, 85%);
+          border-color: mix(@brand-secondary, black, 85%);
         }
       }
     }
@@ -344,7 +345,7 @@
 // Text only pagination (no graphics)
 // -------------------------------------------------- 
 .pagination-plain {
-  font-size: ceil(@font-size-base * 1.14);
+  font-size: floor(@component-font-size-base * 1.067); // ~16px
   font-weight: 700;
   list-style-type: none;
   margin: 0 0 20px;
@@ -361,7 +362,7 @@
     }
     &.active {
       > a {
-        color: mix(@lightgray, white, 66%);
+        color: mix(@gray-light, white, 66%);
       }
     }
     > a {
@@ -395,8 +396,7 @@
 
 // Pagination dropdown
 // --------------------------------------------------
-.pagination-dropdown {	
-	
+.pagination-dropdown {		
   ul {
     min-width: 67px;
     width: auto;

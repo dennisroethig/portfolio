@@ -22,7 +22,7 @@
     visibility: visible;
     width: auto;
     margin-top: 5px;    
-    border: 2px solid @firm;
+    border: 2px solid @brand-secondary;
     padding: 5px 0;
     background-color: @inverse;
     border-radius: @border-radius-large;
@@ -43,7 +43,7 @@
 
   // Opened state
   .open > & {
-    margin-top: 18px;
+    margin-top: 18px !important;
     opacity: 1;
     visibility: visible;
   }
@@ -69,18 +69,18 @@
     &.selected {
       > a,
       > a.highlighted {
-        background: @firm;
+        background: @brand-secondary;
         color: @inverse;
 
         &:hover,
         &:focus {
-          background: mix(@firm, black, 85%);
+          background: mix(@brand-secondary, black, 85%);
           color: @inverse;
         }
       }
     }
     > a {
-      color: fade(@base, 75%);
+      color: fade(@brand-primary, 75%);
       padding: 6px 15px 8px;
       text-decoration: none;
       .clearfix();
@@ -89,18 +89,18 @@
       &:hover,
       &:active,
       &:focus {
-        background: mix(@inverse, @base, 85%);
+        background: mix(@inverse, @brand-primary, 85%);
         color: inherit;
         outline: none;
       }
 
       &.highlighted {
-        background: mix(@inverse, @base, 73.5%);
+        background: mix(@inverse, @brand-primary, 73.5%);
         color: @inverse;
 
         &:hover,
         &:focus {
-          background: mix(@inverse, @base, 66%);
+          background: mix(@inverse, @brand-primary, 66%);
           color: @inverse;
         }
       }
@@ -134,7 +134,7 @@
   }
   .dropdown-arrow {
     border-bottom: none;
-    border-top: 8px outset mix(@inverse, @base, 94%);
+    border-top: 8px outset mix(@inverse, @brand-primary, 94%);
     bottom: 100%;
     top: auto;
   }
@@ -143,7 +143,7 @@
 // Second level nav
 .navbar-fixed-bottom .nav > li > ul:before {
   border-bottom: none;
-  border-top: 9px outset @base;
+  border-top: 9px outset @brand-primary;
   bottom: 4px;
   top: auto;
 }
@@ -157,7 +157,7 @@
       margin-bottom: 10px;
 
       &.dropdown-arrow-inverse {
-        border-top-color: @base;
+        border-top-color: @brand-primary;
       }
     }
   }
@@ -172,7 +172,7 @@
 .dropdown-arrow {
   border-style: solid;
   border-width: 0 9px 9px 9px;
-  border-color: transparent transparent mix(@inverse, @base, 94%) transparent;
+  border-color: transparent transparent mix(@inverse, @brand-primary, 94%) transparent;
   height: 0;
   margin-top: 0;
   opacity: 0;
@@ -188,7 +188,7 @@
 // Alternate Color
 // --------------------------------------------------
 .dropdown-inverse {
-  background-color: @base;
+  background-color: @brand-primary;
   color: mix(@inverse, black, 80%);
   padding: 4px 0 6px;
 
@@ -209,7 +209,7 @@
     &.active,
     &.selected {
       > a {
-        background: @firm;
+        background: @brand-secondary;
         color: @inverse;
         position: relative;
         z-index: 1;
@@ -231,19 +231,19 @@
       &:hover,
       &:active,
       &:focus {
-        background: mix(@base, black, 85%);
+        background: mix(@brand-primary, black, 85%);
       }
       &.highlighted {
-        background: mix(@base, @inverse, 85%);
+        background: mix(@brand-primary, @inverse, 85%);
         &:hover,
         &:focus {
-          background: mix(@base, @inverse, 75%);
+          background: mix(@brand-primary, @inverse, 75%);
         }
       }
     }
     .divider {
-      background-color: mix(@base, white, 85%);
-      border-bottom-color: mix(@base, white, 85%);
+      background-color: mix(@brand-primary, white, 85%);
+      border-bottom-color: mix(@brand-primary, white, 85%);
     }
   }
 }

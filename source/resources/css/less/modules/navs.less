@@ -31,7 +31,7 @@
     &.active {
       > a,
       > a:hover {
-        background-color: @button-primary-active;
+        background-color: @btn-primary-active-bg;
       }
     }
     
@@ -46,10 +46,10 @@
     }
 
     > a {
-      background-color: @firm;
-      border-left: 2px solid @button-primary-active;
+      background-color: @brand-secondary;
+      border-left: 2px solid @btn-primary-active-bg;
       color: @inverse;
-      font-size: ceil(@font-size-base * 1.142); // ~16px
+      font-size: floor(@component-font-size-base * 1.067); // ~16px
       font-weight: 700;
       line-height: 1;
       margin: 0;
@@ -59,10 +59,10 @@
       
       &:hover,
       &:focus {
-        background-color: @button-primary-hover;
+        background-color: @btn-primary-hover-bg;
       }
       &:active {
-        background-color: @button-primary-active;
+        background-color: @btn-primary-active-bg;
       }
 
       @media (max-width: 480px) {
@@ -165,6 +165,7 @@
     // General link styling
     > a {
       border-width: @nav-tabs-border-width;
+      font-size: ceil(@component-font-size-base * 0.933); // ~14px
       font-weight: 700;
       padding: 7px 21px 8px;      
       color: @nav-tabs-color;      
@@ -228,8 +229,8 @@
           > a,
           > a:hover,
           > a:focus {
-            background-color: @firm;
-            border: 2px solid @firm;
+            background-color: @brand-secondary;
+            border: 2px solid @brand-secondary;
             color: @inverse;
             &:before { display: none; }
           }
@@ -283,7 +284,7 @@
   border: 2px solid #ddd;
   border-radius: @nav-border-radius;
   margin-bottom: 20px;
-  padding: 20px 20px 10px;
+  padding: 20px 20px 5px;
   position: relative;
   z-index: 1;
 }
@@ -299,7 +300,7 @@
     margin-right: -@nav-list-gap;
     padding: 0 @nav-list-gap;
     font-weight: 700;
-    line-height: floor(@font-size-base * 1.429); // ~20px
+    line-height: 1.538; // ~20px
   }
 
   > li {
@@ -309,8 +310,8 @@
       > a,
       > a:hover,
       > a:focus {
-        background-color: mix(@base, white, 10%);
-        color: mix(@base, white, 85%);
+        background-color: mix(@brand-primary, white, 10%);
+        color: mix(@brand-primary, white, 85%);
       }
     }
 
@@ -318,13 +319,13 @@
       height: 2px;
       border-bottom: none;
       margin: 13px -@nav-list-gap 17px 0;
-      background-color: mix(@base, white, 10%);
+      background-color: mix(@brand-primary, white, 10%);
     }
 
     > a {
-      border-radius: @nav-item-border-radius - 1;
-      font-size: ceil(@font-size-base * 1.071);
-      line-height: floor(@font-size-base * 1.429);
+      border-radius: @nav-item-border-radius;
+      font-size: @component-font-size-base;
+      line-height: 1.333; // ~20px
       font-weight: 700;
       margin-left: -@nav-list-gap;
       margin-right: -@nav-list-gap;
@@ -338,14 +339,14 @@
 }
 
 .nav-header {
-  color: mix(@base, white, 40%);
-  font-size: ceil(@font-size-base * .928);
+  color: mix(@brand-primary, white, 40%);
+  font-size: floor(@component-font-size-base * .867); // ~13px
   text-transform: uppercase;
 }
 
 // Nav list with a background color
 .nav-list-vivid {
-  background-color: mix(@base, white, 9%);
+  background-color: mix(@brand-primary, white, 9%);
   border-radius: @nav-item-border-radius;
   padding-bottom: 2px;
 
@@ -360,17 +361,18 @@
       > a,
       > a:hover,
       > a:focus {
-        background-color: @firm;
+        background-color: @brand-secondary;
         color: @inverse;
       }
     }
     > a {
       border-radius: 0;
-      color: mix(@base, white, 85%);
-      font-size: @font-size-base;
+      color: mix(@brand-primary, white, 85%);
+      font-size: ceil(@component-font-size-base * .933); // ~14px
       
-      &:hover, &:focus {
-        color: mix(@firm, black, 85%);
+      &:hover,
+      &:focus {
+        color: mix(@brand-secondary, black, 85%);
       }
     }
   }
