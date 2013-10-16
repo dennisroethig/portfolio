@@ -5,7 +5,7 @@
 		"url": "http://www.glassysurf.net/oceania/australia/bells_beach",
 		"subTitle": "Surf forecast built with Meteor",
 		"paragraphs": [
-			"My goal was to get some experience with the popular Meteor framework. Based on Node.js it offers real-time connections between server and clients",
+			"My goal was to get some experience with the popular Meteor framework. Based on Node.js it offers real-time connections between server and clients.",
 			"The wave and wind data is fetched and regulary updated in the backend while the clients receive new data as soon as it's updated.",
 			"Due to it's simple 'out of the box' nature it's perfect for rapid prototyping, especially if there is no seperate backend/api available."
 		]
