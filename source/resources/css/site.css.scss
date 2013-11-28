@@ -6,7 +6,11 @@
 
 @import "scss/normalize";
 
+$break-small: 768px;
+
 @import "scss/skills";
+
+@import "scss/introduction";
 
 @import "scss/work_experience";
 

@@ -168,7 +168,7 @@ module.exports = function (grunt) {
             },
             sass: {
                 files: ['<%= folder.css_source %>/**/*.scss'],
-                tasks: ['compass']
+                tasks: ['compass', 'autoprefixer']
             },
             less: {
                 files: ['<%= folder.css_source %>/**/*.less'],
