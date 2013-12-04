@@ -16,10 +16,19 @@ module.exports = function (grunt) {
                 flatten: true,
                 data: 'source/data/*.json',
                 layout: '<%= folder.layouts_source %>/master.hbs',
-                partials: "<%= folder.partials_source %>/**/*.hbs",
-                collections: []
+                partials: "<%= folder.partials_source %>/**/*.hbs"
             },
-            pages: {
+            development: {
+                options: {
+                    production: false
+                },
+                src: ['<%= folder.templates_source %>/*.hbs'],
+                dest: '<%= folder.dist %>/'
+            },
+            production: {
+                options: {
+                    production: true
+                },
                 src: ['<%= folder.templates_source %>/*.hbs'],
                 dest: '<%= folder.dist %>/'
             }
@@ -51,13 +60,22 @@ module.exports = function (grunt) {
             options: {
                 separator: '\n',
             },
-            debug: {
+            javascript: {
                 src: [
                     '<%= folder.js_source %>/libs/jquery.js',
                     '<%= folder.js_source %>/libs/bootstrap.min.js',
                     '<%= folder.js_source %>/common.js'
                 ],
                 dest: '<%= folder.js_dist %>/main.js',
+                nonull: true
+            },
+            css: {
+                src: [
+                    '<%= folder.css_dist %>/bootstrap.min.css',
+                    '<%= folder.css_dist %>/flat-ui.min.css',
+                    '<%= folder.css_dist %>/site.css'
+                ],
+                dest: '<%= folder.css_dist %>/main.min.css',
                 nonull: true
             }
         },
@@ -184,11 +202,11 @@ module.exports = function (grunt) {
             },
             data: {
                 files: ['source/data/**/*.json'],
-                tasks: ['assemble', 'prettify']
+                tasks: ['assemble:development', 'prettify']
             },
             handlebars: {
                 files: ['<%= folder.templates_source %>/**/*.hbs'],
-                tasks: ['assemble', 'prettify']
+                tasks: ['assemble:development', 'prettify']
             },
             images: {
                 files: ['<%= folder.resources_source %>/imgs/**/*'],
@@ -196,7 +214,7 @@ module.exports = function (grunt) {
             },
             javascript: {
                 files: ['<%= folder.js_source %>/**/*.js'],
-                tasks: ['jshint', 'concat']
+                tasks: ['jshint', 'concat:javascript']
             },
             sass: {
                 files: ['<%= folder.css_source %>/**/*.scss'],
@@ -240,19 +258,33 @@ module.exports = function (grunt) {
     
 
     grunt.registerTask('server', [
-        'build',
+        'build_dev',
         'connect:server',
         'watch'
     ]);
     
 
+    grunt.registerTask('build_dev', [
+        'clean:dist',
+        'assemble:development',
+        'concat:javascript',
+        'less',
+        'compass:dev',
+        'copy',
+        'concat:css',
+        'prettify',
+        'autoprefixer',
+        'uglify:production'
+    ]);
+
     grunt.registerTask('build', [
         'clean:dist',
-        'assemble',
-        'concat',
+        'assemble:production',
+        'concat:javascript',
         'less',
         'compass:dist',
         'copy',
+        'concat:css',
         'prettify',
         'autoprefixer',
         'uglify:production'

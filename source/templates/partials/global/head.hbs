@@ -6,7 +6,13 @@
     <title>Dennis Roethig - Front-End Developer</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
-    <link rel="stylesheet" href="resources/css/flat-ui.min.css">
-    <link rel="stylesheet" href="resources/css/site.css">
+
+    {{#if production}}
+        <link rel="stylesheet" href="resources/css/main.min.css">
+    {{else}}
+        <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="resources/css/flat-ui.min.css">
+        <link rel="stylesheet" href="resources/css/site.css">
+    {{/if}}
+
 </head>

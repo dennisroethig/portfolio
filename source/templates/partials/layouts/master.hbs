@@ -10,22 +10,26 @@
     	
     	{{> footer }}
 		
-		<script src="resources/js/main.js"></script>
-        {{!-- // <script src="//localhost:35729/livereload.js"></script> --}}
-        
-        <script type="text/javascript">
-            var _gauges = _gauges || [];
-            (function() {
-                var t   = document.createElement('script');
-                t.type  = 'text/javascript';
-                t.async = true;
-                t.id    = 'gauges-tracker';
-                t.setAttribute('data-site-id', '4fd1e2da613f5d5640000066');
-                t.src = '//secure.gaug.es/track.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(t, s);
-            })();
-        </script>
+
+        {{#if production}}
+            <script src="resources/js/main.min.js"></script>
+            <script type="text/javascript">
+                var _gauges = _gauges || [];
+                (function() {
+                    var t   = document.createElement('script');
+                    t.type  = 'text/javascript';
+                    t.async = true;
+                    t.id    = 'gauges-tracker';
+                    t.setAttribute('data-site-id', '4fd1e2da613f5d5640000066');
+                    t.src = '//secure.gaug.es/track.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(t, s);
+                })();
+            </script>
+        {{else}}
+            <script src="resources/js/main.js"></script>
+            <script src="//localhost:35729/livereload.js"></script>
+        {{/if}}
         
     </body>
 
