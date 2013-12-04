@@ -1,122 +1,218 @@
 .current_projects {
 	
-	padding-top: 20px;
+	padding-top: 40px;
 	padding-bottom: 40px;
 
 	article {
-		
-		width: 100%;
-		padding-top: 50px;
+		margin-bottom: 6em;
+	}
 
-		> div {
-			position: relative;
+	.project-type-wrapper {
 
-			&:before {
-				content: '';
-				display: block;
-				position: absolute;
-				top: 5%;
-				bottom: 40%;
-				left: 5%;
-				right: 5%;
-				// background: transparent url('../imgs/projects/friendticker.png') center top no-repeat;
-				// background-size: 100% auto;
-			}
+		position: relative;
+		// background-color: red;
 
-		}
-
-		&.friendticker > div:before {
-			background: transparent url('../imgs/projects/friendticker.png') center top no-repeat;
-			background-size: 100% auto;
-		}
-
-		&.glassysurf > div:before {
-			background: transparent url('../imgs/projects/glassysurf.png') center top no-repeat;
-			background-size: 100% auto;
-		}
-
-		.details-btn {
-			position: absolute;
-			top: 0;
-			right: 0;
-			font-size: 1.8em;
-		}
-
-		.fui-plus {
+		&:before {
+			content: '';
 			display: block;
-		}
-
-		.fui-cross {
-			display: none;
-		}
-		
-
-
-		.project-type {
-			width: 100%;
-		}
-
-		// 1026 x 627
-		section {
 			position: absolute;
 			top: 5%;
 			bottom: 40%;
 			left: 5%;
 			right: 5%;
-			padding: 1em 1.5em;
-			background-color: transparent;
-			opacity: 1;
-			border: 1px solid #444;
-			transition-property: background-color;
-			transition-duration: 0.5s;
-			transition-timing-function: ease-in;
-
-			.project-details {
-				opacity: 0;
-				transition-property: opacity;
-				transition-duration: 0.5s;
-				transition-timing-function: ease-out;
-				overflow: hidden;
-
-				h4, h5, h6, p {
-					position: relative;
-					left: -100%;
-					transition-property: left;
-					transition-timing-function: ease-out;
-					transition-duration: 0.5s;
-					transition-delay: 0;
-				}
-
-			}
 		}
-	
-		&:target {
-			
-			.fui-plus {
-				display: none;
+
+		&.phone {
+			width: 80%;
+			margin: 0 auto;
+
+			&:before {
+				top: 11%;
+				bottom: 16%;
+				left: 8%;
+				right: 8%;
 			}
-
-			.fui-cross {
-				display: block;
-			}
-
-			section {
-				
-				background-color: rgba(255, 255, 255, 0.9);
-
-				.project-details {
-					opacity: 1;
-
-					h4, h5, h6, p {
-						left: 0;
-					}
-
-				}
-
-			}
-
 		}
 
 	}
+
+	.friendticker .project-type-wrapper:before {
+		background: transparent url('../imgs/projects/friendticker.jpg') center top no-repeat;
+		background-size: 100% auto;
+	}
+
+	.glassysurf .project-type-wrapper:before {
+		background: transparent url('../imgs/projects/glassysurf.jpg') center top no-repeat;
+		background-size: 100% auto;
+	}
+
+	.surfcast .project-type-wrapper:before {
+		background: transparent url('../imgs/projects/surfcast.jpg') center top no-repeat;
+		background-size: 100% auto;
+	}
+
+	.chisholm .project-type-wrapper:before {
+		background: transparent url('../imgs/projects/chisholm.jpg') center top no-repeat;
+		background-size: 100% auto;
+	}
+
+	.melbourne-festival .project-type-wrapper:before {
+		background: transparent url('../imgs/projects/melbourne-festival.jpg') center top no-repeat;
+		background-size: 100% auto;
+	}
+
+	.skilled .project-type-wrapper:before {
+		background: transparent url('../imgs/projects/skilled.jpg') center top no-repeat;
+		background-size: 100% auto;
+	}
+
+	.seek-learning .project-type-wrapper:before {
+		background: transparent url('../imgs/projects/seek-learning.jpg') center top no-repeat;
+		background-size: 100% auto;
+	}
+
+	.nissan .project-type-wrapper:before {
+		background: transparent url('../imgs/projects/nissan.jpg') center top no-repeat;
+		background-size: 100% auto;
+	}
+
+	.seek-learning-mobile .project-type-wrapper:before {
+		background: transparent url('../imgs/projects/seek-learning-mobile.jpg') center top no-repeat;
+		background-size: 100% auto;
+	}
+
+	.sneakerboy .project-type-wrapper:before {
+		background: transparent url('../imgs/projects/sneakerboy.jpg') center top no-repeat;
+		background-size: 100% auto;
+	}
+
+	.asia-fashion-week .project-type-wrapper:before {
+		background: transparent url('../imgs/projects/asia-fashion-week.jpg') center top no-repeat;
+		background-size: 100% auto;
+	}
+
+
+
+
+	.project-type {
+		width: 100%;
+		height: auto;
+	}
+
+	// article {
+		
+	// 	width: 100%;
+	// 	padding-top: 50px;
+
+	// 	> div {
+	// 		position: relative;
+
+	// 		&:before {
+	// 			content: '';
+	// 			display: block;
+	// 			position: absolute;
+	// 			top: 5%;
+	// 			bottom: 40%;
+	// 			left: 5%;
+	// 			right: 5%;
+	// 			// background: transparent url('../imgs/projects/friendticker.png') center top no-repeat;
+	// 			// background-size: 100% auto;
+	// 		}
+
+	// 	}
+
+	// 	&.friendticker > div:before {
+	// 		background: transparent url('../imgs/projects/friendticker.png') center top no-repeat;
+	// 		background-size: 100% auto;
+	// 	}
+
+	// 	&.glassysurf > div:before {
+	// 		background: transparent url('../imgs/projects/glassysurf.png') center top no-repeat;
+	// 		background-size: 100% auto;
+	// 	}
+
+	// 	.details-btn {
+	// 		position: absolute;
+	// 		top: 0;
+	// 		right: 0;
+	// 		font-size: 1.8em;
+	// 	}
+
+	// 	.fui-plus {
+	// 		display: block;
+	// 	}
+
+	// 	.fui-cross {
+	// 		display: none;
+	// 	}
+		
+
+
+	// 	.project-type {
+	// 		width: 100%;
+	// 	}
+
+	// 	// 1026 x 627
+	// 	section {
+	// 		position: absolute;
+	// 		top: 5%;
+	// 		bottom: 40%;
+	// 		left: 5%;
+	// 		right: 5%;
+	// 		padding: 1em 1.5em;
+	// 		background-color: transparent;
+	// 		opacity: 1;
+	// 		border: 1px solid #444;
+	// 		transition-property: background-color;
+	// 		transition-duration: 0.5s;
+	// 		transition-timing-function: ease-in;
+
+	// 		.project-details {
+	// 			opacity: 0;
+	// 			transition-property: opacity;
+	// 			transition-duration: 0.5s;
+	// 			transition-timing-function: ease-out;
+	// 			overflow: hidden;
+
+	// 			h4, h5, h6, p {
+	// 				position: relative;
+	// 				left: -100%;
+	// 				transition-property: left;
+	// 				transition-timing-function: ease-out;
+	// 				transition-duration: 0.5s;
+	// 				transition-delay: 0;
+	// 			}
+
+	// 		}
+	// 	}
+	
+	// 	&:target {
+			
+	// 		.fui-plus {
+	// 			display: none;
+	// 		}
+
+	// 		.fui-cross {
+	// 			display: block;
+	// 		}
+
+	// 		section {
+				
+	// 			background-color: rgba(255, 255, 255, 0.9);
+
+	// 			.project-details {
+	// 				opacity: 1;
+
+	// 				h4, h5, h6, p {
+	// 					left: 0;
+	// 				}
+
+	// 			}
+
+	// 		}
+
+	// 	}
+
+	// }
 
 }

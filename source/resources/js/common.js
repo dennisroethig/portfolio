@@ -44,12 +44,12 @@ var Portfolio = (function () {
 		},
 
 		watchViewportForElements: function (elements) {
-			elements.each((function (index, el) {	
+			elements.each((function (index, el) {
 				if (window.addEventListener) {
-					addEventListener('DOMContentLoaded', this.givenElementInViewport(el), false); 
-					addEventListener('load', this.givenElementInViewport(el), false); 
-					addEventListener('scroll', this.givenElementInViewport(el), false); 
-					addEventListener('resize', this.givenElementInViewport(el), false); 
+					addEventListener('DOMContentLoaded', this.givenElementInViewport(el), false);
+					addEventListener('load', this.givenElementInViewport(el), false);
+					addEventListener('scroll', this.givenElementInViewport(el), false);
+					addEventListener('resize', this.givenElementInViewport(el), false);
 				} else if (window.attachEvent)  {
 					attachEvent('DOMContentLoaded', this.givenElementInViewport(el));
 					attachEvent('load', this.givenElementInViewport(el));
@@ -71,3 +71,4 @@ var Portfolio = (function () {
 Portfolio.init();
 
 
+

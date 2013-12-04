@@ -1,20 +1,196 @@
 {
+	"surfca.st": {
+		"identifier": "surfcast",
+		"title": "surfca.st",
+		"url": "http://www.surfca.st",
+		"device-img": "iphone-mod.svg",
+		"device-img-class": "phone",
+		"description": "This is one of my private projects, to try out new stuff and test the latest technologies. Surfca.st is a mobile surf forecast application. It's mostly used by myself for weekend surf trips around Victoria :-)",
+		"challenge": "Providing a native application feeling in the mobile browser (Android & iOS)",
+		"badges": [
+			{ "type": "success", "name": "HTML5" },
+			{ "type": "success", "name": "CSS3" },
+			{ "type": "success", "name": "GruntJS" },
+			{ "type": "info", "name": "Angular" },
+			{ "type": "info", "name": "Node.js" },
+			{ "type": "info", "name": "MongoDB" }
+		]
+	},
+
+	"nissan": {
+		"identifier": "nissan",
+		"title": "Nissan Australia",
+		"url": "http://www.nissan.com.au",
+		"device-img": "imac.svg",
+		"device-img-class": "",
+		"description": "Sitecore award winning website for Nissan Australia.",
+		"challenge": "Updating and maintaining design heavy functionality.",
+		"information": "Front-End developer of the project team ",
+		"information-link-name": "@Reactive",
+		"information-link-href": "http://www.reactive.com",
+		"badges": [
+			{ "type": "success", "name": "HTML5" },
+			{ "type": "success", "name": "CSS3" },
+			{ "type": "info", "name": "Sitecore" }
+		]
+	},
+
+	"seek-learning": {
+		"identifier": "seek-learning",
+		"title": "SEEK Learning",
+		"url": "http://www.seeklearning.com.au",
+		"device-img": "imac.svg",
+		"device-img-class": "",
+		"description": "Sitecore award winning education site for SEEK Learning.",
+		"challenge": "Planning and building such a large-scale project with the given timeline.",
+		"information": "Front-End developer of the project team ",
+		"information-link-name": "@Reactive",
+		"information-link-href": "http://www.reactive.com",
+		"badges": [
+			{ "type": "success", "name": "HTML5" },
+			{ "type": "success", "name": "CSS3" },
+			{ "type": "info", "name": "Sitecore" }
+		]
+	},
+
+	"seek-learning-mobile": {
+		"identifier": "seek-learning-mobile",
+		"title": "SEEK Learning mobile",
+		"url": "http://m.seeklearning.com.au",
+		"device-img": "iphone-mod.svg",
+		"device-img-class": "phone",
+		"description": "Separate, mobile-optimized version of SEEK Learning.",
+		"challenge": "Providing a full-content experience on small-screen devices.",
+		"information": "Front-End developer of the project team ",
+		"information-link-name": "@Reactive",
+		"information-link-href": "http://www.reactive.com",
+		"badges": [
+			{ "type": "success", "name": "HTML5" },
+			{ "type": "success", "name": "CSS3" },
+			{ "type": "info", "name": "Sitecore" }
+		]
+	},
+
+	"chisholm": {
+		"identifier": "chisholm",
+		"title": "Chisholm Mobile",
+		"url": "http://www.chisholm.edu.au",
+		"device-img": "iphone-mod.svg",
+		"device-img-class": "phone",
+		"description": "Mobile-optimized version of Chisholm",
+		"challenge": "Implementing the most important functionality of the existing desktop site.",
+		"information": "Front-End developer of the project team ",
+		"information-link-name": "@Reactive",
+		"information-link-href": "http://www.reactive.com",
+		"badges": [
+			{ "type": "success", "name": "HTML5" },
+			{ "type": "success", "name": "CSS3" },
+			{ "type": "info", "name": "Sitecore" }
+		]
+	},
+
+	"melbourne-festival": {
+		"identifier": "melbourne-festival",
+		"title": "Melbourne Festival 2013",
+		"url": "http://www.melbournefestival.com.au",
+		"device-img": "imac.svg",
+		"device-img-class": "",
+		"description": "2013 site for Melbourne Festival to browse events and order tickets.",
+		"challenge": "Fully responsive website with tight deadline.",
+		"information": "Front-End developer of the project team ",
+		"information-link-name": "@Reactive",
+		"information-link-href": "http://www.reactive.com",
+		"badges": [
+			{ "type": "success", "name": "HTML5" },
+			{ "type": "success", "name": "CSS3" },
+			{ "type": "success", "name": "Twitter Bootstrap" },
+			{ "type": "info", "name": "Codagenic" }
+		]
+	},
+
+	"skilled": {
+		"identifier": "skilled",
+		"title": "Skilled",
+		"url": "http://skilled.com.au",
+		"device-img": "imac.svg",
+		"device-img-class": "",
+		"description": "Complete rebuild of existing job-portal.",
+		"challenge": "Fully responsive content-managed website.",
+		"information": "Front-End developer of the project team ",
+		"information-link-name": "@Reactive",
+		"information-link-href": "http://www.reactive.com",
+		"badges": [
+			{ "type": "success", "name": "HTML5" },
+			{ "type": "success", "name": "CSS3" },
+			{ "type": "info", "name": "Umbraco" }
+		]
+	},
+
+	"sneakerboy": {
+		"identifier": "sneakerboy",
+		"title": "Sneakerboy",
+		"url": "http://sneakerboy.com",
+		"device-img": "imac.svg",
+		"device-img-class": "",
+		"description": "Fully respsonsive E-commerce website for high-class fashion items.",
+		"challenge": "Achieving a great user-experience with a very simplistc design.",
+		"information": "Front-End developer of the project team ",
+		"information-link-name": "@Reactive",
+		"information-link-href": "http://www.reactive.com",
+		"badges": [
+			{ "type": "success", "name": "HTML5" },
+			{ "type": "success", "name": "CSS3" },
+			{ "type": "success", "name": "Twitter Bootstrap" },
+			{ "type": "info", "name": "Codagenic" }
+		]
+	},
+
+	"asia-fashion-week": {
+		"identifier": "asia-fashion-week",
+		"title": "Mercedes Benz Stylo Asia Fashion Week",
+		"url": "http://mbstyloafw.com",
+		"device-img": "imac.svg",
+		"device-img-class": "",
+		"description": "Fully respsonsive brand website to promote the Asia Fashion Week 2013",
+		"challenge": "Integrating several social content feeds to achieve a near real-time experience.",
+		"information": "Front-End developer of the project team ",
+		"information-link-name": "@Reactive",
+		"information-link-href": "http://www.reactive.com",
+		"badges": [
+			{ "type": "success", "name": "HTML5" },
+			{ "type": "success", "name": "CSS3" },
+			{ "type": "info", "name": "Wordpress" }
+		]
+	},
+
 	"glassysurf": {
 		"identifier": "glassysurf",
 		"title": "glassysurf.net",
 		"url": "http://www.glassysurf.net/oceania/australia/bells_beach",
-		"subTitle": "Surf forecast built with Meteor",
-		"paragraphs": [
-			"My goal was to get some experience with the popular Meteor framework. Based on Node.js it offers real-time connections between server and clients.",
-			"The wave and wind data is fetched and regulary updated in the backend while the clients receive new data as soon as it's updated.",
-			"Due to it's simple 'out of the box' nature it's perfect for rapid prototyping, especially if there is no seperate backend/api available."
+		"device-img": "imac.svg",
+		"device-img-class": "",
+		"description": "Desktop surf forecasting with real-time updates.",
+		"challenge": "Building a front and backend with Meteor.",
+		"badges": [
+			{ "type": "success", "name": "HTML5" },
+			{ "type": "success", "name": "CSS3" },
+			{ "type": "info", "name": "Meteor" }
 		]
 	},
+
 	"friendticker": {
 		"identifier": "friendticker",
 		"title": "Friendticker",
 		"url": "http://www.friendticker.com",
-		"subTitle": "Location-based Social Network",
-		"paragraphs": []
+		"device-img": "imac.svg",
+		"device-img-class": "",
+		"description": "Europe's first location-based social network.",
+		"challenge": "Providing a full social network, including real-time updates about your peers.",
+		"information": "Front-End developer of the project team ",
+		"information-link-name": "@Servtag (Ströer Media AG)",
+		"information-link-href": "http://www.stroeermobile.com",
+		"badges": [
+			{ "type": "info", "name": "Ruby on Rails" }
+		]
 	}
 }

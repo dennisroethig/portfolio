@@ -1,4 +1,60 @@
 {{#each projects}}
+	
+	<article class="row {{this.identifier}}">
+		
+		<div class="col-sm-4">
+
+			<div class="project-type-wrapper {{device-img-class}}">
+				<img src="resources/imgs/icons/svg/{{this.device-img}}" alt="" class="project-type">
+			</div>
+
+			{{!-- imac.svg | iphone-mod.svg --}}
+		</div>
+
+		<div class="col-sm-8">
+			<h4>{{this.title}}</h4>
+
+			{{#if description}}
+				<p>
+					<strong>Description:</strong>
+					{{description}}
+				</p>
+			{{/if}}
+
+			{{#if challenge}}
+				<p>
+					<strong>Challenge:</strong>
+					{{challenge}}
+				</p>
+			{{/if}}
+
+			{{#if information}}
+				<p>
+					<strong>Position:</strong>
+					{{information}}
+					{{#if information-link-name}}
+						<a href="{{information-link-href}}" target="_blank">{{information-link-name}}</a>
+					{{/if}}
+				</p>
+			{{/if}}
+
+			<p>
+				<strong>Link:</strong>
+				<a href="{{this.url}}" target="_blank">{{this.url}}</a>
+			</p>
+
+			<p>
+				{{#each this.badges}}
+					<span class="label label-{{this.type}}">{{this.name}}</span>
+				{{/each}}
+			</p>
+		</div>
+
+	</article>
+
+{{/each}}
+
+{{!-- {{#each projects}}
 
 	<div class="row">
 
@@ -35,4 +91,4 @@
 		</div>
 	</div>
 
-{{/each}}
+{{/each}} --}}
