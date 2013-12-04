@@ -4,3 +4,4 @@ gems/
 dist/
 stuff/
 node_modules/
+.ftppass

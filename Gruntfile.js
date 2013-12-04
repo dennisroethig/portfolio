@@ -75,10 +75,18 @@ module.exports = function (grunt) {
 
 
         compass: {
+            dev: {
+                options: {
+                    sassDir: '<%= folder.css_source %>',
+                    cssDir: '<%= folder.css_dist %>',
+                    environment: 'development'
+                }
+            },
             dist: {
                 options: {
                     sassDir: '<%= folder.css_source %>',
-                    cssDir: '<%= folder.css_dist %>'
+                    cssDir: '<%= folder.css_dist %>',
+                    environment: 'production'
                 }
             }
         },
@@ -92,6 +100,21 @@ module.exports = function (grunt) {
                 dest: '<%= folder.resources_dist %>'
             }
         },
+
+
+        'ftp-deploy': {
+            build: {
+                auth: {
+                    host: 'roethig.it',
+                    port: 21,
+                    authKey: 'ftpkey'
+                },
+                src: '<%= folder.dist %>',
+                dest: '/htdocs'
+            }
+        },
+
+
 
         less: {
             development: {
@@ -146,6 +169,15 @@ module.exports = function (grunt) {
         },
 
 
+        uglify: {
+            production: {
+                files: {
+                    '<%= folder.dist %>/resources/js/main.min.js': ['<%= folder.dist %>/resources/js/main.js']
+                }
+            }
+        },
+
+
         watch: {
             options: {
                 livereload: true
@@ -168,7 +200,7 @@ module.exports = function (grunt) {
             },
             sass: {
                 files: ['<%= folder.css_source %>/**/*.scss'],
-                tasks: ['compass', 'autoprefixer']
+                tasks: ['compass:dev', 'autoprefixer']
             },
             less: {
                 files: ['<%= folder.css_source %>/**/*.less'],
@@ -189,9 +221,11 @@ module.exports = function (grunt) {
         'grunt-contrib-compass',
         'grunt-contrib-concat',
         'grunt-contrib-copy',
+        'grunt-ftp-deploy',
         'grunt-contrib-jshint',
         'grunt-contrib-sass',
         'grunt-contrib-less',
+        'grunt-contrib-uglify',
         'grunt-contrib-watch',
         'grunt-prettify'
     ], function (tasks) {
@@ -217,11 +251,16 @@ module.exports = function (grunt) {
         'assemble',
         'concat',
         'less',
-        'compass',
+        'compass:dist',
         'copy',
         'prettify',
-        'autoprefixer'
+        'autoprefixer',
+        'uglify:production'
     ]);
 
+    grunt.registerTask('deploy', [
+        'build',
+        'ftp-deploy',
+    ]);
 
 }
