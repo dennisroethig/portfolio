@@ -5,6 +5,11 @@
 
 	article {
 		margin-bottom: 6em;
+
+		p {
+			word-break: break-word;
+		}
+		
 	}
 
 	.project-type-wrapper {

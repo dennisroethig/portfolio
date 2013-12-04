@@ -39,9 +39,13 @@ module.exports = function (grunt) {
             options: {
                 browsers: ['last 4 version', 'ie 10', 'ie 9', 'ie 8', 'ie 7']
             },
-            site: {
+            development: {
                 src: '<%= folder.css_dist %>/site.css',
                 dest: '<%= folder.css_dist %>/site.css'
+            },
+            production: {
+                src: ['<%= folder.css_dist %>/main.min.css'],
+                dest: '<%= folder.css_dist %>/main.min.css'
             }
         },
 
