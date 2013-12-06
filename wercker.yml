@@ -34,7 +34,7 @@ deploy:
   steps:
     
     # - npm-install
-    
+
     # - script:
     #     name: install bower
     #     code: |
@@ -42,11 +42,15 @@ deploy:
     #       bower install
 
     - wercker/bundle-install@0.9.4
+
+    - script:
+        name: write env var
+        code: |-
+          echo {"ftpkey": {"username": "$FTP_USERNAME", "password": "$FTP_PASSWORD"}} >> .ftppass
     
     - wercker/grunt@0.0.6:
         tasks: deploy
     
-
   after-steps:
     
       - wouter/email-notify:
