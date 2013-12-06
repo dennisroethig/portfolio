@@ -101,14 +101,16 @@ module.exports = function (grunt) {
                 options: {
                     sassDir: '<%= folder.css_source %>',
                     cssDir: '<%= folder.css_dist %>',
-                    environment: 'development'
+                    environment: 'development',
+                    bundleExec: true
                 }
             },
             dist: {
                 options: {
                     sassDir: '<%= folder.css_source %>',
                     cssDir: '<%= folder.css_dist %>',
-                    environment: 'production'
+                    environment: 'production',
+                    bundleExec: true
                 }
             }
         },
