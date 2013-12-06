@@ -3,24 +3,15 @@ box: wercker/nodejs
 build:
   # The steps that will be executed on build
   steps:
-    # A step that executes `npm install` command
+
     - npm-install
-    # A step that executes `npm test` command
+
     - npm-test
 
     - wercker/bundle-install@0.9.4
 
     - wercker/grunt@0.0.6:
         tasks: build
-
-    # A custom script step, name value is used in the UI
-    # and the code value contains the command that get executed
-    - script:
-        name: echo nodejs information
-        code: |
-          echo "node version $(node -v) running"
-          echo "npm version $(npm -v) running"
-
 
   after-steps:
     
@@ -30,3 +21,24 @@ build:
           username: $EMAIL_USERNAME
           password: $EMAIL_PASSWORD
           host: smtp.gmail.com:587
+
+
+deploy:
+
+  steps:
+  
+    - wercker/bundle-install@0.9.4
+    
+    - wercker/grunt@0.0.6:
+        tasks: deploy
+    
+
+  after-steps:
+    
+      - wouter/email-notify:
+          from: roethig.dennis@gmail.com
+          to: roethig.dennis@gmail.com
+          username: $EMAIL_USERNAME
+          password: $EMAIL_PASSWORD
+          host: smtp.gmail.com:587
+
