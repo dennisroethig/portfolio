@@ -5,3 +5,4 @@ dist/
 stuff/
 node_modules/
 .ftppass
+Gemfile.lock
