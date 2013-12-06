@@ -6,6 +6,12 @@ build:
 
     - npm-install
 
+    - script:
+        name: install bower
+        code: |
+          sudo npm install -g bower
+          bower install
+
     - npm-test
 
     - wercker/bundle-install@0.9.4
@@ -26,7 +32,15 @@ build:
 deploy:
 
   steps:
-  
+    
+    # - npm-install
+    
+    # - script:
+    #     name: install bower
+    #     code: |
+    #       sudo npm install -g bower
+    #       bower install
+
     - wercker/bundle-install@0.9.4
     
     - wercker/grunt@0.0.6:
