@@ -46,7 +46,7 @@ deploy:
     - script:
         name: write env var
         code: |-
-          echo {"ftpkey": {"username": "$FTP_USERNAME", "password": "$FTP_PASSWORD"}} >> .ftppass
+          echo {"ftpkey": {"username": $FTP_USERNAME, "password": $FTP_PASSWORD}} >> .ftppass
     
     - wercker/grunt@0.0.6:
         tasks: deploy
