@@ -178,6 +178,19 @@
 		]
 	},
 
+	"tasmania-touring": {
+		"identifier": "tasmania-touring",
+		"title": "Tasmania Touring",
+		"url": "http://www.tasmania-touring.com",
+		"device-img": "imac.svg",
+		"device-img-class": "",
+		"description": "Private tours in Tasmania",
+		"badges": [
+			{ "type": "success", "name": "HTML5" },
+			{ "type": "success", "name": "CSS3" }
+		]
+	},
+
 	"friendticker": {
 		"identifier": "friendticker",
 		"title": "Friendticker",
