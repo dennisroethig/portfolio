@@ -36,9 +36,9 @@ var Portfolio = (function () {
 		givenElementInViewport: function (el) {
 			return (function () {
 				if ( this.isElementInViewport(el) ) {
-					$(el).addClass('visible');
+					$(el).addClass('country-visible');
 				} else {
-					// $(el).removeClass('visible');
+					// $(el).removeClass('country-visible');
 				}
 			}).bind(this);
 		},
@@ -71,4 +71,5 @@ var Portfolio = (function () {
 Portfolio.init();
 
 
-
+
+

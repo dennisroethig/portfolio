@@ -203,15 +203,19 @@ module.exports = function (grunt) {
 
 
         uncss: {
-          dist: {
-            files: {
-              '<%= folder.dist %>/resources/css/main.css': [
-                '<%= folder.dist %>/index.html',
-                '<%= folder.dist %>/like.html',
-                '<%= folder.dist %>/projects.html',
-                '<%= folder.dist %>/resume.html'
-                ]
-              }
+            dist: {
+                files: {
+                    '<%= folder.dist %>/resources/css/main.css': [
+                        '<%= folder.dist %>/index.html',
+                        '<%= folder.dist %>/like.html',
+                        '<%= folder.dist %>/projects.html',
+                        '<%= folder.dist %>/resume.html'
+                    ]
+                },
+                options: {
+                    compress: true,
+                    ignore: ['.country-visible']
+                }
             }
         },
 
@@ -294,9 +298,9 @@ module.exports = function (grunt) {
         'copy',
         'concat:css',
         'prettify',
-        'autoprefixer',
         'uglify:production',
-        'uncss'
+        'autoprefixer',
+        'uncss:dist'
     ]);
 
     grunt.registerTask('build', [
@@ -308,9 +312,9 @@ module.exports = function (grunt) {
         'copy',
         'concat:css',
         'prettify',
-        'autoprefixer',
         'uglify:production',
-        'uncss'
+        'autoprefixer',
+        'uncss:dist',
     ]);
 
     grunt.registerTask('deploy', [
