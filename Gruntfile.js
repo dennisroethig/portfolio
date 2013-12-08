@@ -44,8 +44,8 @@ module.exports = function (grunt) {
                 dest: '<%= folder.css_dist %>/site.css'
             },
             production: {
-                src: ['<%= folder.css_dist %>/main.min.css'],
-                dest: '<%= folder.css_dist %>/main.min.css'
+                src: ['<%= folder.css_dist %>/main.css'],
+                dest: '<%= folder.css_dist %>/main.css'
             }
         },
 
@@ -79,7 +79,7 @@ module.exports = function (grunt) {
                     '<%= folder.css_dist %>/flat-ui.min.css',
                     '<%= folder.css_dist %>/site.css'
                 ],
-                dest: '<%= folder.css_dist %>/main.min.css',
+                dest: '<%= folder.css_dist %>/main.css',
                 nonull: true
             }
         },
@@ -202,6 +202,20 @@ module.exports = function (grunt) {
         },
 
 
+        uncss: {
+          dist: {
+            files: {
+              '<%= folder.dist %>/resources/css/main.css': [
+                '<%= folder.dist %>/index.html',
+                '<%= folder.dist %>/like.html',
+                '<%= folder.dist %>/projects.html',
+                '<%= folder.dist %>/resume.html'
+                ]
+              }
+            }
+        },
+
+
         watch: {
             options: {
                 livereload: true
@@ -251,7 +265,8 @@ module.exports = function (grunt) {
         'grunt-contrib-less',
         'grunt-contrib-uglify',
         'grunt-contrib-watch',
-        'grunt-prettify'
+        'grunt-prettify',
+        'grunt-uncss'
     ], function (tasks) {
         grunt.loadNpmTasks(tasks);
     });
@@ -293,7 +308,8 @@ module.exports = function (grunt) {
         'concat:css',
         'prettify',
         'autoprefixer',
-        'uglify:production'
+        'uglify:production',
+        'uncss'
     ]);
 
     grunt.registerTask('deploy', [
