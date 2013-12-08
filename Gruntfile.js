@@ -295,7 +295,8 @@ module.exports = function (grunt) {
         'concat:css',
         'prettify',
         'autoprefixer',
-        'uglify:production'
+        'uglify:production',
+        'uncss'
     ]);
 
     grunt.registerTask('build', [
