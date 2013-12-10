@@ -1,14 +1,16 @@
 var Portfolio = (function () {
 
 	var init,
-		observeViewport;
+		observeViewport,
+		fixedTracking,
+		clickTracking;
 
 	// public
 	init = function () {
 
-		console.log('init Portfolio');
-
 		observeViewport.init( $('.work_experience').find('.country') );
+
+		clickTracking.init();
 
 	};
 
@@ -61,14 +63,81 @@ var Portfolio = (function () {
 
 	};
 
+	// thanks to gaug.es not allowing event tracking
+	fixedTracking = {
+
+		initialized: false,
+
+		trackingTarget: null,
+
+		init: function () {
+
+
+			if (typeof _gauges !== 'undefined' && !this.initialized) {
+
+				_gauges.title = (function () {
+
+					return this.getTrackingTarget();
+
+				}).bind(this);
+
+				this.initialized = true;
+
+				return true;
+
+			}
+
+			return this.initialized;
+
+		},
+
+		getTrackingTarget: function () {
+
+			var trackingTarget = Portfolio.trackingTarget;
+
+			if (trackingTarget) {
+				this.trackingTarget = null;
+				return trackingTarget;
+			}
+
+			return document.title;
+
+		}
+
+	};
+
+	clickTracking = {
+
+		init: function () {
+
+			var links = $('a[data-gauges-event]');
+
+			links.on('click', (function (event) {
+
+				if (fixedTracking.init()) {
+
+					Portfolio.trackingTarget = 'click: ' + $(event.target).data('gauges-event');
+
+					_gauges.push(['track']);
+				}
+
+			}).bind(this));
+
+		}
+
+	};
+
 	return {
-		init: init
+		init: init,
+		trackingTarget: fixedTracking.trackingTarget
 	};
 
 })();
 
 
 Portfolio.init();
+
+
 
 
 

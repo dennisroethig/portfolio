@@ -33,14 +33,14 @@
 					<strong>Position:</strong>
 					{{information}}
 					{{#if information-link-name}}
-						<a href="{{information-link-href}}" target="_blank">{{information-link-name}}</a>
+						<a href="{{information-link-href}}" target="_blank" data-gauges-event="{{information-link-name}}">{{information-link-name}}</a>
 					{{/if}}
 				</p>
 			{{/if}}
 
 			<p>
 				<strong>Link:</strong>
-				<a href="{{this.url}}" target="_blank">{{this.url}}</a>
+				<a href="{{this.url}}" target="_blank" data-gauges-event="{{this.identifier}}">{{this.url}}</a>
 			</p>
 
 			<p>
