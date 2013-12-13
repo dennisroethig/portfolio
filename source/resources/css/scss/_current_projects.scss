@@ -3,7 +3,12 @@
 	padding-top: 40px;
 	padding-bottom: 40px;
 
+
+
+	// EACH PROJECT
+
 	article {
+
 		margin-bottom: 6em;
 
 		p {
@@ -12,10 +17,13 @@
 		
 	}
 
+
+
+	// PROJECT TYPE: DESKTOP OR MOBILE SCREEN
+
 	.project-type-wrapper {
 
 		position: relative;
-		// background-color: red;
 
 		&:before {
 			content: '';
@@ -28,6 +36,7 @@
 		}
 
 		&.phone {
+
 			width: 80%;
 			margin: 0 auto;
 
@@ -40,6 +49,15 @@
 		}
 
 	}
+
+	.project-type {
+		width: 100%;
+		height: auto;
+	}
+
+
+
+	// DIFFERENT BACKGROUND PER PROJECT
 
 	.friendticker .project-type-wrapper:before {
 		background: transparent url('../imgs/projects/friendticker.jpg') center top no-repeat;
@@ -100,14 +118,5 @@
 		background: transparent url('../imgs/projects/tasmania-touring.jpg') center top no-repeat;
 		background-size: 100% auto;
 	}
-
-
-
-
-	.project-type {
-		width: 100%;
-		height: auto;
-	}
-
 
 }

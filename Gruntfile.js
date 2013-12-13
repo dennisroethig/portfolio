@@ -39,13 +39,9 @@ module.exports = function (grunt) {
             options: {
                 browsers: ['last 4 version', 'ie 10', 'ie 9', 'ie 8', 'ie 7']
             },
-            development: {
-                src: '<%= folder.css_dist %>/site.css',
-                dest: '<%= folder.css_dist %>/site.css'
-            },
             production: {
-                src: ['<%= folder.css_dist %>/main.css'],
-                dest: '<%= folder.css_dist %>/main.css'
+                src: ['<%= folder.css_dist %>/styles.css'],
+                dest: '<%= folder.css_dist %>/styles.css'
             }
         },
 
@@ -77,9 +73,9 @@ module.exports = function (grunt) {
                 src: [
                     '<%= folder.css_dist %>/bootstrap.min.css',
                     '<%= folder.css_dist %>/flat-ui.min.css',
-                    '<%= folder.css_dist %>/site.css'
+                    '<%= folder.css_dist %>/custom.css'
                 ],
-                dest: '<%= folder.css_dist %>/main.css',
+                dest: '<%= folder.css_dist %>/styles.css',
                 nonull: true
             }
         },
@@ -120,7 +116,7 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: '<%= folder.resources_source %>/',
-                src: ['htc/*', 'imgs/**', 'fonts/**', 'css/*.css'],
+                src: ['htc/*', 'imgs/**', 'fonts/**', 'css/bootstrap.min.css'],
                 dest: '<%= folder.resources_dist %>'
             }
         },
@@ -141,21 +137,13 @@ module.exports = function (grunt) {
 
 
         less: {
-            development: {
-                options: {
-                    paths: ['<%= folder.css_source %>/less']
-                },
-                files: {
-                    '<%= folder.css_dist %>/flat-ui.css': '<%= folder.css_source %>/less/flat-ui.less'
-                }
-            },
             production: {
                 options: {
-                    paths: ['<%= folder.css_source %>/less'],
+                    paths: ['<%= folder.css_source %>/libs/flat-ui-less'],
                     yuicompress: true
                 },
                 files: {
-                    '<%= folder.css_dist %>/flat-ui.min.css': '<%= folder.css_source %>/less/flat-ui.less'
+                    '<%= folder.css_dist %>/flat-ui.min.css': '<%= folder.css_source %>/flat-ui-less/flat-ui.less'
                 }
             }
         },
@@ -205,7 +193,7 @@ module.exports = function (grunt) {
         uncss: {
             dist: {
                 files: {
-                    '<%= folder.dist %>/resources/css/main.css': [
+                    '<%= folder.dist %>/resources/css/styles.css': [
                         '<%= folder.dist %>/index.html',
                         '<%= folder.dist %>/like.html',
                         '<%= folder.dist %>/projects.html',
@@ -299,8 +287,8 @@ module.exports = function (grunt) {
         'concat:css',
         'prettify',
         'uglify:production',
-        'autoprefixer',
-        'uncss:dist'
+        'uncss:dist',
+        'autoprefixer'
     ]);
 
     grunt.registerTask('build', [
@@ -313,8 +301,8 @@ module.exports = function (grunt) {
         'concat:css',
         'prettify',
         'uglify:production',
-        'autoprefixer',
         'uncss:dist',
+        'autoprefixer'
     ]);
 
     grunt.registerTask('deploy', [
