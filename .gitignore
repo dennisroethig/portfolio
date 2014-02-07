@@ -6,3 +6,4 @@ stuff/
 node_modules/
 .ftppass
 Gemfile.lock
+.DS_Store
