@@ -52,4 +52,4 @@ deploy:
         code: |
           pwd
           ls -la
-          scp -i $PRIVATEKEY_PATH -r ./dist root@192.241.181.64:/var/www/portfolio/
+          scp -i $PRIVATEKEY_PATH -r dist root@192.241.181.64:/var/www/portfolio/
