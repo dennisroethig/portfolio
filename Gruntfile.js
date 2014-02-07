@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 
     // configuration
     grunt.initConfig({
-        
+
 
         pkg: grunt.file.readJSON('package.json'),
 
@@ -268,14 +268,13 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [
         'server'
     ]);
-    
+
 
     grunt.registerTask('server', [
         'build_dev',
         'connect:server',
         'watch'
     ]);
-    
 
     grunt.registerTask('build_dev', [
         'clean:dist',

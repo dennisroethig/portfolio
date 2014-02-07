@@ -20,7 +20,7 @@ build:
         tasks: build
 
   after-steps:
-    
+
       - wouter/email-notify:
           from: roethig.dennis@gmail.com
           to: roethig.dennis@gmail.com
@@ -32,31 +32,30 @@ build:
 deploy:
 
   steps:
-    
-    # - npm-install
-
-    # - script:
-    #     name: install bower
-    #     code: |
-    #       sudo npm install -g bower
-    #       bower install
 
     - wercker/bundle-install@0.9.4
 
+    - add-to-known_hosts:
+        hostname: 192.241.181.64
+    - mktemp:
+        envvar: PRIVATEKEY_PATH
+    - create-file:
+        name: write key
+        filename: $PRIVATEKEY_PATH
+        content: $WERCKER_PRIVATE
+        overwrite: true
     - script:
-        name: write env var
-        code: |-
-          echo -e {'"ftpkey"': {'"username"': '"'$FTP_USERNAME'"', '"password"': '"'$FTP_PASSWORD'"'}} >> .ftppass
-    
-    - wercker/grunt@0.0.6:
-        tasks: deploy
-    
+        name: transfer application
+        code: |
+          pwd
+          ls -la
+          scp -i $PRIVATEKEY_PATH -r dist root@192.241.181.64:/home/dennis/dev/static/portfolio/
+
   after-steps:
-    
+
       - wouter/email-notify:
           from: roethig.dennis@gmail.com
           to: roethig.dennis@gmail.com
           username: $EMAIL_USERNAME
           password: $EMAIL_PASSWORD
           host: smtp.gmail.com:587
-
