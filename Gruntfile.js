@@ -116,9 +116,15 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: '<%= folder.resources_source %>/',
-                src: ['htc/*', 'imgs/**','sitemap.txt', 'fonts/**', 'css/bootstrap.min.css'],
+                src: ['htc/*', 'imgs/**', 'fonts/**', 'css/bootstrap.min.css'],
                 dest: '<%= folder.resources_dist %>'
-            }
+            },
+            sitemap: {
+                expand: true,
+                cwd: '<%= folder.resources_source %>/',
+                src: ['sitemap.txt'],
+                dest: '<%= folder.dist %>'
+            },
         },
 
 
