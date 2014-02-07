@@ -35,6 +35,9 @@ deploy:
 
     - wercker/bundle-install@0.9.4
 
+    - wercker/grunt@0.0.6:
+        tasks: build
+
     - add-to-known_hosts:
         hostname: 192.241.181.64
     - mktemp:
