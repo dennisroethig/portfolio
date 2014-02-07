@@ -53,12 +53,3 @@ deploy:
           pwd
           ls -la
           scp -i $PRIVATEKEY_PATH -r ./dist root@192.241.181.64:/home/dennis/dev/static/portfolio/
-
-  after-steps:
-
-      - wouter/email-notify:
-          from: roethig.dennis@gmail.com
-          to: roethig.dennis@gmail.com
-          username: $EMAIL_USERNAME
-          password: $EMAIL_PASSWORD
-          host: smtp.gmail.com:587
